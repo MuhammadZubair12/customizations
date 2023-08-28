@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-08-25 15:34:25.082865",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "amount",
+  "interest",
+  "total",
+  "add_jv"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount"
+  },
+  {
+   "fieldname": "interest",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Interest"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total"
+  },
+  {
+   "fieldname": "add_jv",
+   "fieldtype": "Button",
+   "in_list_view": 1,
+   "label": "Add JV"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-08-25 16:51:18.255910",
+ "modified_by": "Administrator",
+ "module": "Customizations",
+ "name": "Repayments",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,175 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-08-25 11:12:34.437281",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "loan_details_tab",
+  "naming_series",
+  "source",
+  "credit_account",
+  "amount",
+  "interest_percentage",
+  "column_break_7",
+  "posting_date",
+  "debit_account",
+  "total_amount_to_repay",
+  "interest_amount",
+  "repayment_tab",
+  "first_installment_date",
+  "repayment_credit_account",
+  "repayment_interest_account",
+  "column_break_16",
+  "number_of_installment",
+  "repayment_debit_account",
+  "section_break_19",
+  "repayment"
+ ],
+ "fields": [
+  {
+   "fieldname": "loan_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Loan Details"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "naming_series",
+   "options": "CO-LOAN-.YYYY.-"
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Data",
+   "label": "Source"
+  },
+  {
+   "fieldname": "credit_account",
+   "fieldtype": "Link",
+   "label": "Credit Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "interest_percentage",
+   "fieldtype": "Percent",
+   "label": "Interest Percentage"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "debit_account",
+   "fieldtype": "Link",
+   "label": "Debit Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "total_amount_to_repay",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount to repay",
+   "reqd": 1
+  },
+  {
+   "fieldname": "interest_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Interest Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "repayment_tab",
+   "fieldtype": "Tab Break",
+   "label": "Repayment"
+  },
+  {
+   "fieldname": "first_installment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "First Installment Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "repayment_credit_account",
+   "fieldtype": "Link",
+   "label": "Repayment Credit Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "repayment_interest_account",
+   "fieldtype": "Link",
+   "label": "Repayment Interest Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "number_of_installment",
+   "fieldtype": "Int",
+   "label": "Number of Installment",
+   "reqd": 1
+  },
+  {
+   "fieldname": "repayment_debit_account",
+   "fieldtype": "Link",
+   "label": "Repayment Debit Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "repayment",
+   "fieldtype": "Table",
+   "label": "Repayment",
+   "options": "Repayments"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-28 19:37:27.372735",
+ "modified_by": "Administrator",
+ "module": "Customizations",
+ "name": "Company Loan Management",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
