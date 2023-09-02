@@ -4,6 +4,7 @@
 frappe.ui.form.on('Company Loan Management', {
 	refresh: function(frm) {
 		
+		if (frm.doc.show == 0) {
 			frm.add_custom_button(__("Create Journal Entry"), function() {
 				frappe.call({
 					method: "customizations.customizations.doctype.company_loan_management.company_loan_management.loan_journal_entries",
@@ -15,6 +16,9 @@ frappe.ui.form.on('Company Loan Management', {
 					}
 				}).then((r) => {
 					if(r.message == "ok") {
+						frm.set_value("show", 1);
+						refresh_field("show");
+						frm.save()
 						frappe.show_alert({
 							message:__('Hi, Journal Entry Generated Successfully'),
 							indicator:'green'
@@ -31,6 +35,8 @@ frappe.ui.form.on('Company Loan Management', {
 			
 			});
 
+		} else {}
+			
 	}
 });
 
@@ -47,15 +53,20 @@ frappe.ui.form.on('Repayments', {
 				credit: frm.doc.repayment_credit_account,
 				debit: frm.doc.repayment_debit_account,
 				interest: frm.doc.repayment_interest_account,
-				total: d.total
+				total: d.total,
+				interest_total:d.interest,
+				credit_total: d.amount
 			}
 		}).then((r) => {
 			if(r.message == "ok") {
+				
+				
 				frappe.show_alert({
 					message:__('Hi, Journal Entry Generated Successfully'),
 					indicator:'green'
 				}, 5);
 				setTimeout(() => {
+					
 					location.reload()
 				}, 5000);
 				

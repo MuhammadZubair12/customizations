@@ -27,7 +27,10 @@
   "number_of_installment",
   "repayment_debit_account",
   "section_break_19",
-  "repayment"
+  "repayment",
+  "show",
+  "up",
+  "amended_from"
  ],
  "fields": [
   {
@@ -47,6 +50,7 @@
    "label": "Source"
   },
   {
+   "description": "Don't use account as Group",
    "fieldname": "credit_account",
    "fieldtype": "Link",
    "label": "Credit Account",
@@ -74,6 +78,7 @@
    "label": "Posting Date"
   },
   {
+   "description": "Don't use account as group",
    "fieldname": "debit_account",
    "fieldtype": "Link",
    "label": "Debit Account",
@@ -145,11 +150,35 @@
    "fieldtype": "Table",
    "label": "Repayment",
    "options": "Repayments"
+  },
+  {
+   "default": "0",
+   "fieldname": "show",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Company Loan Management",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "up",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2023-08-28 19:37:27.372735",
+ "modified": "2023-09-02 12:17:54.036819",
  "modified_by": "Administrator",
  "module": "Customizations",
  "name": "Company Loan Management",
@@ -166,6 +195,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

@@ -11,6 +11,29 @@ class CompanyLoanManagement(Document):
 	def validate(self):
 		self.loan()
 
+	def submit(self):
+		reference_number = "HASJDG123I2GJEH"
+		je = frappe.new_doc("Journal Entry")
+		je.voucher_type = "Journal Entry"
+		je.posting_date = self.posting_date
+		je.cheque_no = reference_number
+		je.cheque_date = self.posting_date
+		je.append(
+			"accounts",
+				{
+					"account": self.debit_account,
+					"debit_in_account_currency": self.amount
+				},
+			)
+		je.append(
+			"accounts",
+				{
+					"account": self.credit_account,
+					"credit_in_account_currency": self.amount
+				},
+			)
+		je.submit()
+
 	
 	def loan(self):
 		if self.number_of_installment:
@@ -35,10 +58,12 @@ def create_journal_entries(**args):
 	credit = args.get('credit')
 	debit = args.get('debit')
 	interest = args.get('interest')
+	interest_total = args.get('interest_total')
+	credit_total = args.get('credit_total')
 	date = args.get('start_date')
 	c_date = datetime.strptime(date, "%Y-%m-%d")
 	total = args.get('total')
-	intrest_total = float(total) * 2
+	# intrest_total = float(total) * 2
 	reference_number = "HASJDG123I2GJEH"
 	je = frappe.new_doc("Journal Entry")
 	je.voucher_type = "Journal Entry"
@@ -48,22 +73,22 @@ def create_journal_entries(**args):
 	je.append(
 		"accounts",
 			{
-				"account": interest,
-				"credit_in_account_currency": intrest_total
+				"account": debit,
+				"debit_in_account_currency": total
 			},
 		)
 	je.append(
 		"accounts",
 			{
 				"account": credit,
-				"debit_in_account_currency": total
+				"credit_in_account_currency": credit_total
 			},
 		)
 	je.append(
 		"accounts",
 			{
-				"account":debit,
-				"debit_in_account_currency": total
+				"account":interest,
+				"credit_in_account_currency": interest_total
 			},
 		)
 	je.save()
